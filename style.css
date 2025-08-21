@@ -5,10 +5,36 @@
 }
 
 body {
+    height: 100vh;
     background-color: hsl(0, 0%, 86%);
+    font-family: "poppins", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .container {
     background: #fff;
     width: fit-content;
+    margin: 0 auto;
+    padding: 20px 40px;
+}
+
+.dates-container {
+    display: flex;
+    gap: 20px;
+}
+
+.dates-container label{
+    display: block;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.dates-container input{
+    display: block;
+    padding: 15px;
+    width: 15vh;
 }
