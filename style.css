@@ -11,7 +11,6 @@ body {
     font-family: "poppins", serif;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
     gap: 30px;
 }
@@ -21,6 +20,7 @@ body {
     margin: 0 auto;
     padding: 20px 40px;
     width: 70%;
+    max-width: 700px;
     border-bottom-right-radius: 100px;
     border-top-left-radius: 20px;
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
@@ -32,6 +32,18 @@ body {
     border-bottom: solid 1px hsl(0, 0%, 86%);
     padding-bottom: 50px;
 }
+
+.arrow-icon{
+    background: hsl(259, 100%, 65%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+}
+
 
 .dates-container label {
     display: block;
