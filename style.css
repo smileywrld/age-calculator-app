@@ -18,11 +18,13 @@ body {
 .container {
     background: #fff;
     margin: 0 auto;
-    padding: 20px 40px;
+    padding: 30px 50px;
     width: 70%;
     max-width: 700px;
-    border-bottom-right-radius: 100px;
+    border-bottom-right-radius: 150px;
+    border-bottom-left-radius: 10px;
     border-top-left-radius: 20px;
+    border-top-right-radius: 10px;
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
 }
 
