@@ -22,12 +22,15 @@ body {
     padding: 20px 40px;
     width: 70%;
     border-bottom-right-radius: 100px;
+    border-top-left-radius: 20px;
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
 }
 
 .dates-container {
     display: flex;
     gap: 20px;
+    border-bottom: solid 1px hsl(0, 0%, 86%);
+    padding-bottom: 50px;
 }
 
 .dates-container label {
@@ -42,9 +45,11 @@ body {
     display: block;
     padding: 15px;
     width: 100%;
+    font-weight: 700;
+    font-size: 1.4rem;
 }
 
-.dates-container input::placeholder{
+.dates-container input::placeholder {
     font-weight: 700;
     font-size: 1.4rem;
 }
