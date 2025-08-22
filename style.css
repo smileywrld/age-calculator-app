@@ -33,7 +33,7 @@ body {
     padding-bottom: 50px;
 }
 
-.arrow-icon{
+.arrow-icon {
     background: hsl(259, 100%, 65%);
     width: 60px;
     height: 60px;
@@ -43,16 +43,17 @@ body {
     align-items: center;
     float: right;
     cursor: pointer;
+    margin-top: -25px;
 }
 
-.arrow-icon img{
+.arrow-icon img {
     width: 40px;
 }
 
-.arrow-icon:hover{
+.arrow-icon:hover {
     background: hsl(0, 0%, 0%);
     transition-duration: 0.4s;
-   
+
 }
 
 
@@ -77,4 +78,25 @@ body {
 .dates-container input::placeholder {
     font-weight: 700;
     font-size: 1.4rem;
+}
+
+.year-result,
+.month-result,
+.days-result {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+}
+
+.year-result h2,
+.month-result h2,
+.days-result h2 {
+    font-size: 4rem;
+}
+
+.year-result span, .month-result span, .days-result span {
+    color: hsl(259, 100%, 65%);
+    font-size: 4rem;
+    font-weight: 900;
 }
