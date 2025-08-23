@@ -12,6 +12,23 @@ if (!userDay || !userMonth || !userYear) {
 	console.log("Year cannot be in the future");
 }
 
+function daysInMonth(month, year) {
+	if (
+		month == 1 ||
+		month == 3 ||
+		month == 5 ||
+		month == 7 ||
+		month == 8 ||
+		month == 12
+	) {
+		return 31;
+	} else if (month == 4 || month == 6 || month == 9 || month == 11) {
+		return 30;
+    } else if (month == 2) {
+        
+    }
+}
+
 const currentDate = new Date();
 const currentDay = currentDate.getDate();
 const currentMonth = currentDate.getMonth() + 1;
