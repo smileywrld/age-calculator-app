@@ -2,7 +2,7 @@ const userDay = document.getElementById("day").value;
 const userMonth = document.getElementById("month").value;
 const userYear = document.getElementById("year").year;
 
-if (userDay || userMonth || userYear == "") {
+if (!userDay || !userMonth || !userYear) {
 	console.log("all fields are required");
 } else if (userMonth < 1 || userMonth > 12) {
 	console.log("invalid month");
