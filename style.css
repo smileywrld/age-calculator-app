@@ -102,3 +102,8 @@ body {
     font-size: 4rem;
     font-weight: 900;
 }
+
+.day-error, .month-error, .year-error{
+    color: hsl(0, 100%, 67%);
+margin-top: 10px;
+}
