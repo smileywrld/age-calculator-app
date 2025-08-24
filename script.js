@@ -34,12 +34,27 @@ function daysInMonth(month, year) {
 	}
 }
 
+// variables for the current calender
+
 const currentDate = new Date();
 const currentDay = currentDate.getDate();
 const currentMonth = currentDate.getMonth() + 1;
 const currentYear = currentDate.getFullYear();
 console.log(currentMonth);
 
-const dayDifference = currentDay - userDay;
-const monthDifference = currentMonth - userMonth;
-const yearDifference = currentYear - userYear;
+// variables for the difference
+let dayDifference = currentDay - userDay;
+let monthDifference = currentMonth - userMonth;
+let yearDifference = currentYear - userYear;
+
+// adjsuting negative days
+if (dayDifference < 0) {
+	monthDifference = monthDifference - 1;
+	dayDifference = dayDifference + daysInMonth(currentMonth - 1, currentYear);
+
+	//adjusting negative days
+	if (monthDifference < 0) {
+		yearDifference = yearDifference - 1;
+		monthDifference = monthDifference + 12;
+	}
+}
