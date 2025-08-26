@@ -1,8 +1,15 @@
 const userDay = document.getElementById("day").value;
 const userMonth = document.getElementById("month").value;
 const userYear = document.getElementById("year").year;
+const dayError = document.querySelector(".day-error");
+const monthError = document.querySelector(".month-error");
+const yearError = document.querySelector(".year-error");
 
 if (!userDay || !userMonth || !userYear) {
+	dayError.innerHTML = "All fields are required";
+	monthError.innerHTML = "All fields are required";
+	yearError.innerHTML = "All fields are required";
+	document.getElementsByTagName("label").style.color = "hsl(0, 1%, 44%)";
 	console.log("all fields are required");
 } else if (userMonth < 1 || userMonth > 12) {
 	console.log("invalid month");
