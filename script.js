@@ -24,7 +24,6 @@ function checkAge() {
 		dayError.innerHTML = "All fields are required";
 		monthError.innerHTML = "All fields are required";
 		yearError.innerHTML = "All fields are required";
-		document.getElementsByTagName("label").style.color = "hsl(0, 1%, 44%)";
 		console.log("all fields are required");
 	} else if (userMonth < 1 || userMonth > 12) {
 		monthError.innerHTML = "Invalid month";

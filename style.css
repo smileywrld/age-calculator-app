@@ -55,7 +55,10 @@ body {
 .arrow-icon:hover {
     background: hsl(0, 0%, 0%);
     transition-duration: 0.4s;
+}
 
+.error-state {
+    color: hsl(0, 100%, 67%);
 }
 
 
@@ -97,13 +100,17 @@ body {
     font-size: 4rem;
 }
 
-.year-result span, .month-result span, .days-result span {
+.year-result span,
+.month-result span,
+.days-result span {
     color: hsl(259, 100%, 65%);
     font-size: 4rem;
     font-weight: 900;
 }
 
-.day-error, .month-error, .year-error{
+.day-error,
+.month-error,
+.year-error {
     color: hsl(0, 100%, 67%);
-margin-top: 10px;
+    margin-top: 10px;
 }
