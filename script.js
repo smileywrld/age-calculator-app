@@ -8,6 +8,10 @@ function checkAge() {
 	const userMonth = document.getElementById("month").value;
 	const userYear = document.getElementById("year").value;
 
+	const yearResult = document.querySelector(".year-difference");
+	const monthResult = document.querySelector(".month-difference");
+	const dayResult = document.querySelector(".day-difference");
+
 	if (!userDay || !userMonth || !userYear) {
 		dayError.innerHTML = "All fields are required";
 		monthError.innerHTML = "All fields are required";
