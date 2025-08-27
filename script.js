@@ -4,13 +4,21 @@ const yearError = document.querySelector(".year-error");
 const ageBtn = document.querySelector(".icon");
 
 function checkAge() {
-	const userDay = document.getElementById("day").value;
-	const userMonth = document.getElementById("month").value;
-	const userYear = document.getElementById("year").value;
+	const userDay = parseInt(document.getElementById("day").value, 10);
+	const userMonth = parseInt(document.getElementById("month").value, 10);
+	const userYear = parseInt(document.getElementById("year").value, 10);
 
 	const yearResult = document.querySelector(".year-difference");
 	const monthResult = document.querySelector(".month-difference");
 	const dayResult = document.querySelector(".day-difference");
+
+	// variables for the current calender
+
+	const currentDate = new Date();
+	const currentDay = currentDate.getDate();
+	const currentMonth = currentDate.getMonth() + 1;
+	const currentYear = currentDate.getFullYear();
+	console.log(currentMonth);
 
 	if (!userDay || !userMonth || !userYear) {
 		dayError.innerHTML = "All fields are required";
@@ -50,14 +58,6 @@ function checkAge() {
 			}
 		}
 	}
-
-	// variables for the current calender
-
-	const currentDate = new Date();
-	const currentDay = currentDate.getDate();
-	const currentMonth = currentDate.getMonth() + 1;
-	const currentYear = currentDate.getFullYear();
-	console.log(currentMonth);
 
 	// variables for the difference
 	let dayDifference = currentDay - userDay;
