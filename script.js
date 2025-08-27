@@ -76,6 +76,10 @@ function checkAge() {
 			monthDifference = monthDifference + 12;
 		}
 	}
+
+	yearResult.innerHTML = yearDifference;
+	monthResult.innerHTML = monthDifference;
+	dayResult.innerHTML = dayDifference;
 }
 
 ageBtn.addEventListener("click", checkAge);
