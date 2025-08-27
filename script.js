@@ -15,10 +15,13 @@ function checkAge() {
 		document.getElementsByTagName("label").style.color = "hsl(0, 1%, 44%)";
 		console.log("all fields are required");
 	} else if (userMonth < 1 || userMonth > 12) {
+		monthError.innerHTML = "Invalid month";
 		console.log("invalid month");
 	} else if (userDay < 1 || userDay > daysInMonth(userMonth, userYear)) {
+		dayError.innerHTML = "Invalid day";
 		console.log("invalid day");
 	} else if (userYear > currentYear) {
+		yearError.innerHTML = "Year cannot be in the future";
 		console.log("Year cannot be in the future");
 	}
 
@@ -71,5 +74,4 @@ function checkAge() {
 	}
 }
 
-document.addEventListener("DOMContentLoaded", checkAge);
 ageBtn.addEventListener("click", checkAge);
