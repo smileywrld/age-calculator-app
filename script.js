@@ -1,12 +1,13 @@
-const userDay = document.getElementById("day").value;
-const userMonth = document.getElementById("month").value;
-const userYear = document.getElementById("year").year;
 const dayError = document.querySelector(".day-error");
 const monthError = document.querySelector(".month-error");
 const yearError = document.querySelector(".year-error");
 const ageBtn = document.querySelector(".icon");
 
 function checkAge() {
+	const userDay = document.getElementById("day").value;
+	const userMonth = document.getElementById("month").value;
+	const userYear = document.getElementById("year").value;
+
 	if (!userDay || !userMonth || !userYear) {
 		dayError.innerHTML = "All fields are required";
 		monthError.innerHTML = "All fields are required";
@@ -70,5 +71,5 @@ function checkAge() {
 	}
 }
 
-// document.addEventListener("DOMContentLoaded", checkAge);
+document.addEventListener("DOMContentLoaded", checkAge);
 ageBtn.addEventListener("click", checkAge);
