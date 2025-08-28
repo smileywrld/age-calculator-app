@@ -80,6 +80,16 @@ body {
     border: solid 1px hsl(0, 1%, 44%);
 }
 
+input {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
 .dates-container input::placeholder {
     font-weight: 700;
     font-size: 1.4rem;
