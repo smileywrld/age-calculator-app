@@ -4,6 +4,10 @@ const yearError = document.querySelector(".year-error");
 const ageBtn = document.querySelector(".icon");
 
 function checkAge() {
+	const dayDiv = document.querySelector(".day");
+	const monthDiv = document.querySelector(".month");
+	const yearDiv = document.querySelector(".year");
+
 	const userDay = parseInt(document.getElementById("day").value, 10);
 	const userMonth = parseInt(document.getElementById("month").value, 10);
 	const userYear = parseInt(document.getElementById("year").value, 10);
@@ -19,6 +23,16 @@ function checkAge() {
 	const currentMonth = currentDate.getMonth() + 1;
 	const currentYear = currentDate.getFullYear();
 	console.log(currentMonth);
+
+	if (isNaN(userDay)) {
+		console.log("Enter the user day");
+	}
+	if (isNaN(userMonth)) {
+		console.log("Enter the user month");
+	}
+	if (isNaN(userYear)) {
+		console.log("Enter the user year");
+	}
 
 	if (!userDay || !userMonth || !userYear) {
 		dayError.innerHTML = "All fields are required";
