@@ -48,6 +48,10 @@ body {
     margin-top: -25px;
 }
 
+.error {
+    color: hsl(0, 100%, 67%);
+}
+
 .arrow-icon img {
     width: 40px;
 }

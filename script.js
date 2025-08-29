@@ -25,7 +25,10 @@ function checkAge() {
 	console.log(currentMonth);
 
 	if (isNaN(userDay)) {
+		dayDiv.classList.add("error");
 		console.log("Enter the user day");
+	} else {
+		dayDiv.classList.remove("error");
 	}
 	if (isNaN(userMonth)) {
 		console.log("Enter the user month");
