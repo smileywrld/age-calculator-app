@@ -48,8 +48,13 @@ body {
     margin-top: -25px;
 }
 
-.error {
-    color: hsl(0, 100%, 67%);
+.day.error,
+.month.error,
+.year.error,
+.year.error *,
+.month.error *,
+.day.error * {
+    color: hsl(0, 100%, 67%) !important;
 }
 
 .arrow-icon img {

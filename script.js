@@ -31,10 +31,16 @@ function checkAge() {
 		dayDiv.classList.remove("error");
 	}
 	if (isNaN(userMonth)) {
+		monthDiv.classList.add("error");
 		console.log("Enter the user month");
+	} else {
+		monthDiv.classList.remove("error");
 	}
 	if (isNaN(userYear)) {
+		yearDiv.classList.add("error");
 		console.log("Enter the user year");
+	} else {
+		yearDiv.classList.remove("error");
 	}
 
 	if (!userDay || !userMonth || !userYear) {
@@ -51,6 +57,10 @@ function checkAge() {
 	} else if (userYear > currentYear) {
 		yearError.innerHTML = "Year cannot be in the future";
 		console.log("Year cannot be in the future");
+	} else {
+		dayError.innerHTML = "";
+		monthError.innerHTML = "";
+		yearError.innerHTML = "";
 	}
 
 	function daysInMonth(month, year) {
