@@ -8,9 +8,13 @@ function checkAge() {
 	const monthDiv = document.querySelector(".month");
 	const yearDiv = document.querySelector(".year");
 
-	const userDay = parseInt(document.getElementById("day").value, 10);
-	const userMonth = parseInt(document.getElementById("month").value, 10);
-	const userYear = parseInt(document.getElementById("year").value, 10);
+	const dayInput = document.getElementById("day").value;
+	const monthInput = document.getElementById("month").value;
+	const yearInput = document.getElementById("year").value;
+
+	const userDay = parseInt(dayInput, 10);
+	const userMonth = parseInt(monthInput, 10);
+	const userYear = parseInt(yearInput, 10);
 
 	const yearResult = document.querySelector(".year-difference");
 	const monthResult = document.querySelector(".month-difference");
@@ -43,11 +47,12 @@ function checkAge() {
 		yearDiv.classList.remove("error");
 	}
 
-	if (!userDay || !userMonth || !userYear) {
+	if (!dayInput || !monthInput || !yearInput) {
 		dayError.innerHTML = "All fields are required";
 		monthError.innerHTML = "All fields are required";
 		yearError.innerHTML = "All fields are required";
 		console.log("all fields are required");
+		return;
 	} else if (userMonth < 1 || userMonth > 12) {
 		monthError.innerHTML = "Invalid month";
 		console.log("invalid month");
@@ -95,12 +100,12 @@ function checkAge() {
 		monthDifference = monthDifference - 1;
 		dayDifference =
 			dayDifference + daysInMonth(currentMonth - 1, currentYear);
+	}
 
-		//adjusting negative days
-		if (monthDifference < 0) {
-			yearDifference = yearDifference - 1;
-			monthDifference = monthDifference + 12;
-		}
+	//adjusting negative days
+	if (monthDifference < 0) {
+		yearDifference = yearDifference - 1;
+		monthDifference = monthDifference + 12;
 	}
 
 	yearResult.innerHTML = yearDifference;
