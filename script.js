@@ -92,6 +92,7 @@ function checkAge() {
 	} else {
 		// Validate day
 		const maxDays = daysInMonth(userMonth, userYear);
+		console.log("userDay:", userDay, "maxDays:", maxDays);
 		if (userDay < 1 || userDay > maxDays) {
 			dayDiv.classList.add("error");
 			dayError.innerHTML = "Must be a valid day";
