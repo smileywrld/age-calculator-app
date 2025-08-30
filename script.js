@@ -50,6 +50,13 @@ function checkAge() {
 	const currentYear = currentDate.getFullYear();
 	console.log(currentMonth);
 
+	dayDiv.classList.remove("error");
+	monthDiv.classList.remove("error");
+	yearDiv.classList.remove("error");
+	dayError.innerHTML = "";
+	monthError.innerHTML = "";
+	yearError.innerHTML = "";
+
 	if (isNaN(userDay)) {
 		dayDiv.classList.add("error");
 		console.log("Enter the user day");
@@ -68,6 +75,8 @@ function checkAge() {
 	} else {
 		yearDiv.classList.remove("error");
 	}
+
+	let hasError = false;
 
 	if (!dayInput || !monthInput || !yearInput) {
 		dayError.innerHTML = "All fields are required";
