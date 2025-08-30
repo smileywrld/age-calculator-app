@@ -23,6 +23,8 @@ function daysInMonth(month, year) {
 			return 28;
 		}
 	}
+
+	return 0;
 }
 
 function checkAge() {
@@ -87,14 +89,14 @@ function checkAge() {
 		monthDiv.classList.add("error");
 		monthError.innerHTML = "Must be a valid month";
 		hasError = true;
-	}
-
-	// Validate day
-	const maxDays = daysInMonth(userMonth, userYear);
-	if (userDay < 1 || userDay > maxDays) {
-		dayDiv.classList.add("error");
-		dayError.innerHTML = "Must be a valid day";
-		hasError = true;
+	} else {
+		// Validate day
+		const maxDays = daysInMonth(userMonth, userYear);
+		if (userDay < 1 || userDay > maxDays) {
+			dayDiv.classList.add("error");
+			dayError.innerHTML = "Must be a valid day";
+			hasError = true;
+		}
 	}
 
 	// Validate year
