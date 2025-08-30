@@ -57,61 +57,78 @@ function checkAge() {
 	monthError.innerHTML = "";
 	yearError.innerHTML = "";
 
-	if (isNaN(userDay)) {
-		dayDiv.classList.add("error");
-		console.log("Enter the user day");
-	} else {
-		dayDiv.classList.remove("error");
-	}
-	if (isNaN(userMonth)) {
-		monthDiv.classList.add("error");
-		console.log("Enter the user month");
-	} else {
-		monthDiv.classList.remove("error");
-	}
-	if (isNaN(userYear)) {
-		yearDiv.classList.add("error");
-		console.log("Enter the user year");
-	} else {
-		yearDiv.classList.remove("error");
-	}
-
 	let hasError = false;
 
-	if (!dayInput || !monthInput || !yearInput) {
-		dayError.innerHTML = "All fields are required";
-		monthError.innerHTML = "All fields are required";
-		yearError.innerHTML = "All fields are required";
-		console.log("all fields are required");
-		return;
-	} else if (userMonth < 1 || userMonth > 12) {
-		monthError.innerHTML = "Invalid month";
-		console.log("invalid month");
-	} else if (userDay < 1 || userDay > daysInMonth(userMonth, userYear)) {
-		dayError.innerHTML = "Invalid day";
-		console.log("invalid day");
-	} else if (userYear > currentYear) {
-		yearError.innerHTML = "Year cannot be in the future";
-		console.log("Year cannot be in the future");
-	} else {
-		dayError.innerHTML = "";
-		monthError.innerHTML = "";
-		yearError.innerHTML = "";
+	if (!dayInput || isNaN(userDay)) {
+		dayDiv.classList.add("error");
+		dayError.innerHTML = "This field is required";
+		hasError = true;
+	}
+	if (!monthInput || isNaN(userMonth)) {
+		monthDiv.classList.add("error");
+		monthError.innerHTML = "This field is required";
+		hasError = true;
+	}
+	if (!yearInput || isNaN(userYear)) {
+		yearDiv.classList.add("error");
+		yearError.innerHTML = "This field is required";
+		hasError = true;
 	}
 
-	// variables for the difference
+	if (hasError) {
+		yearResult.innerHTML = "--";
+		monthResult.innerHTML = "--";
+		dayResult.innerHTML = "--";
+		return;
+	}
+
+	// Validate month
+	if (userMonth < 1 || userMonth > 12) {
+		monthDiv.classList.add("error");
+		monthError.innerHTML = "Must be a valid month";
+		hasError = true;
+	}
+
+	// Validate day
+	const maxDays = daysInMonth(userMonth, userYear);
+	if (userDay < 1 || userDay > maxDays) {
+		dayDiv.classList.add("error");
+		dayError.innerHTML = "Must be a valid day";
+		hasError = true;
+	}
+
+	// Validate year
+	if (userYear > currentYear) {
+		yearDiv.classList.add("error");
+		yearError.innerHTML = "Must be in the past";
+		hasError = true;
+	} else if (userYear < currentYear - 150) {
+		// Arbitrary limit for reasonable age
+		yearDiv.classList.add("error");
+		yearError.innerHTML = "Must be a valid year";
+		hasError = true;
+	}
+
+	// If any validation error, stop and reset results
+	if (hasError) {
+		yearResult.innerHTML = "--";
+		monthResult.innerHTML = "--";
+		dayResult.innerHTML = "--";
+		return;
+	}
+
+	// calculating the age
 	let dayDifference = currentDay - userDay;
 	let monthDifference = currentMonth - userMonth;
 	let yearDifference = currentYear - userYear;
 
-	// adjsuting negative days
+	// Adjust negative days
 	if (dayDifference < 0) {
-		monthDifference = monthDifference - 1;
-		dayDifference =
-			dayDifference + daysInMonth(currentMonth - 1, currentYear);
+		monthDifference -= 1;
+		dayDifference += daysInMonth(userMonth, userYear);
 	}
 
-	//adjusting negative days
+	//adjusting negative month
 	if (monthDifference < 0) {
 		yearDifference = yearDifference - 1;
 		monthDifference = monthDifference + 12;
