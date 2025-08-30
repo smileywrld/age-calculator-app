@@ -3,6 +3,28 @@ const monthError = document.querySelector(".month-error");
 const yearError = document.querySelector(".year-error");
 const ageBtn = document.querySelector(".icon");
 
+function daysInMonth(month, year) {
+	if (
+		month == 1 ||
+		month == 3 ||
+		month == 5 ||
+		month == 7 ||
+		month == 8 ||
+		month == 10 ||
+		month == 12
+	) {
+		return 31;
+	} else if (month == 4 || month == 6 || month == 9 || month == 11) {
+		return 30;
+	} else if (month == 2) {
+		if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+			return 29;
+		} else {
+			return 28;
+		}
+	}
+}
+
 function checkAge() {
 	const dayDiv = document.querySelector(".day");
 	const monthDiv = document.querySelector(".month");
@@ -66,28 +88,6 @@ function checkAge() {
 		dayError.innerHTML = "";
 		monthError.innerHTML = "";
 		yearError.innerHTML = "";
-	}
-
-	function daysInMonth(month, year) {
-		if (
-			month == 1 ||
-			month == 3 ||
-			month == 5 ||
-			month == 7 ||
-			month == 8 ||
-			month == 10 ||
-			month == 12
-		) {
-			return 31;
-		} else if (month == 4 || month == 6 || month == 9 || month == 11) {
-			return 30;
-		} else if (month == 2) {
-			if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
-				return 29;
-			} else {
-				return 28;
-			}
-		}
 	}
 
 	// variables for the difference
